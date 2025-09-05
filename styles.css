@@ -7,8 +7,38 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
-img{
-    margin-top: 10px;
+img {
+  margin-top: 10px;
+}
+
+.btn {
+  background-color: #007bff; 
+  color: #fff; 
+  border: none; 
+  padding: 0.6rem 1.2rem; 
+  border-radius: 5px; 
+  font-size: 1.5rem; 
+  font-weight: 700; 
+  cursor: pointer; 
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.btn:active {
+  background-color: #004080; /* Even darker when clicked */
+  transform: translateY(0); /* Reset lift */
+}
+
+.btn:disabled {
+  background-color: #80bdff; /* Lighter blue for disabled */
+  cursor: not-allowed;
+  opacity: 0.6;
 }
