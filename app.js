@@ -3,7 +3,12 @@ const btnNewImage = document.getElementById(`change-img`);
 const searchBoxValue = document.getElementById(`search-image`);
 const formEl = document.getElementById(`form`);
 
-function getImage(searchTerm = `cats`) {
+// keep track of the last search
+let currentTerm = "cats";
+
+function getImage(searchTerm = currentTerm) {
+  // update the current term
+  currentTerm = searchTerm;
   fetch(
     `https://api.giphy.com/v1/gifs/translate?api_key=kNGRrtwl8BL1ekkGbhTRnDXkBP3y48M0&s=${searchTerm}`
   )
@@ -32,7 +37,7 @@ function getImage(searchTerm = `cats`) {
 getImage();
 
 // Btn to get new image
-btnNewImage.addEventListener(`click`, getImage);
+btnNewImage.addEventListener(`click`, () => getImage());
 
 // Get a term and get an image
 formEl.addEventListener(`submit`, (event) => {
